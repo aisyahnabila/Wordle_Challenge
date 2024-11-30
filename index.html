@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numerical Wordle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Numerical Wordle</h1>
+        <p>Tebak angka 6-digit dalam 9 percobaan!</p>
+
+        <!-- Area Feedback -->
+        <div id="feedback-area">
+            <div class="feedback-row" id="row-1"></div>
+            <div class="feedback-row" id="row-2"></div>
+            <div class="feedback-row" id="row-3"></div>
+            <div class="feedback-row" id="row-4"></div>
+            <div class="feedback-row" id="row-5"></div>
+            <div class="feedback-row" id="row-6"></div>
+        </div>
+
+        <!-- Input dan Tombol -->
+        <div class="input-area">
+            <input type="text" id="user-input" maxlength="6" placeholder="Masukkan angka 4-digit">
+            <button id="submit-btn">Tebak</button>
+        </div>
+
+        <!-- Status Game -->
+        <div id="game-status"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

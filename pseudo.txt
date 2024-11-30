@@ -1,0 +1,72 @@
+Mulai Wordle Numerik:
+1. Tentukan PANJANG_ANGKA (contoh: 4-digit).
+2. Generate ANGKA_TARGET secara acak dengan PANJANG_ANGKA.
+3. Inisialisasi MAKS_TEBAKAN (contoh: 6 kali).
+4. Set jumlah_tebakan = 0.
+
+Loop selama jumlah_tebakan < MAKS_TEBAKAN:
+    a. Ambil INPUT_ANGKA dari pemain.
+    b. Validasi INPUT_ANGKA:
+        - Jika panjang(INPUT_ANGKA) != PANJANG_ANGKA, beri pesan error.
+        - Jika INPUT_ANGKA mengandung karakter non-digit, beri pesan error.
+    c. Proses Feedback:
+        - Bandingkan setiap digit di INPUT_ANGKA dengan ANGKA_TARGET.
+        - Tentukan feedback untuk setiap digit:
+            - "Green" jika digit benar dan posisi benar.
+            - "Yellow" jika digit benar tetapi posisi salah.
+            - "Grey" jika digit tidak ada di ANGKA_TARGET.
+    d. Tampilkan feedback ke pemain.
+    e. Jika INPUT_ANGKA == ANGKA_TARGET:
+        - Pemain menang.
+        - Akhiri game.
+
+    f. jumlah_tebakan += 1.
+
+Jika jumlah_tebakan == MAKS_TEBAKAN:
+    - Pemain kalah. Tampilkan ANGKA_TARGET.
+Akhiri game.
+==============================================================================================
+Fungsi generate_target(PANJANG_ANGKA):
+    angka_target = ""
+    Ulangi PANJANG_ANGKA kali:
+        Tambahkan digit acak (0-9) ke angka_target
+    Kembalikan angka_target
+==============================================================================================
+Feedback Tebakan
+Fungsi generate_feedback(ANGKA_TARGET, INPUT_ANGKA):
+    hasil = array kosong
+    status_target = array boolean (default: False, panjang: PANJANG_ANGKA)
+
+    # Loop pertama: Periksa Green
+    Untuk setiap index i dari 0 ke PANJANG_ANGKA - 1:
+        Jika INPUT_ANGKA[i] == ANGKA_TARGET[i]:
+            Tambahkan "Green" ke hasil
+            status_target[i] = True
+        Lain:
+            Tambahkan ""
+
+    # Loop kedua: Periksa Yellow
+    Untuk setiap index i dari 0 ke PANJANG_ANGKA - 1:
+        Jika hasil[i] == "":
+            Untuk setiap index j dari 0 ke PANJANG_ANGKA - 1:
+                Jika INPUT_ANGKA[i] == ANGKA_TARGET[j] dan status_target[j] == False:
+                    Tambahkan "Yellow" ke hasil[i]
+                    status_target[j] = True
+                    Hentikan loop
+            Jika tidak ditemukan, set hasil[i] = "Grey"
+    Kembalikan hasil
+========================================================================================
+Cek validasi input
+
+Fungsi validasi_input(INPUT_ANGKA, PANJANG_ANGKA):
+    Jika panjang(INPUT_ANGKA) != PANJANG_ANGKA:
+        Kembalikan "Error: Panjang angka tidak sesuai."
+    Jika INPUT_ANGKA mengandung karakter non-digit:
+        Kembalikan "Error: Input hanya boleh berupa digit (0-9)."
+    Kembalikan "Valid"
+
+=========================================================================================
+
+
+
+
