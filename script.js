@@ -19,14 +19,6 @@ document.getElementById('submit-btn').addEventListener('click', () => {
     const feedback = generateFeedback(target, userInput);
 
     // Tampilkan Feedback
-    // kalau pengen pake simbol aja
-    // feedback.forEach(status => {
-    //     const cell = document.createElement('div');
-    //     cell.className = `feedback-cell ${status}`;
-    //     cell.innerText = status === 'green' ? '✔' : status === 'yellow' ? '?' : 'X';
-    //     feedbackRow.appendChild(cell);
-    // });
-    // Tampilkan Feedback
     for (let i = 0; i < userInput.length; i++) {
         const cell = document.createElement('div');
         cell.className = `feedback-cell ${feedback[i]}`;
