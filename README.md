@@ -1,2 +1,2 @@
-![image](https://github.com/user-attachments/assets/5968a132-3470-4de7-9513-0920e29a793a)
+![image](https://github.com/user-attachments/assets/1e0a56d0-7494-4d3f-b2d3-1a8e03b7f6d8)
 Wordle Algorithm
