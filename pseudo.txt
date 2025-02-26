@@ -1,7 +1,7 @@
 Mulai Wordle Numerik:
 1. Tentukan PANJANG_ANGKA = 6.
 2. Generate ANGKA_TARGET secara acak dengan PANJANG_ANGKA.
-3. Inisialisasi MAKS_TEBAKAN = 6.
+3. Inisialisasi MAKS_TEBAKAN = 9.  // Ubah dari 6 menjadi 9
 4. Set jumlah_tebakan = 0.
 5. Set game_berjalan = True.
 
@@ -38,48 +38,3 @@ Fungsi Reset Game:
 3. Kosongkan semua feedback yang ditampilkan.
 4. Aktifkan tombol submit jika dinonaktifkan.
 5. Tampilkan pesan status game kosong.
-
-==============================================================================================
-Fungsi generate_target(PANJANG_ANGKA):
-    angka_target = ""
-    Ulangi PANJANG_ANGKA kali:
-        Tambahkan digit acak (0-9) ke angka_target
-    Kembalikan angka_target
-==============================================================================================
-Fungsi generate_feedback(ANGKA_TARGET, INPUT_ANGKA):
-    hasil = array kosok
-    status_target = array boolean (default: False, panjang: PANJANG_ANGKA)
-
-    # Loop pertama: Periksa Green
-    Untuk setiap index i dari 0 ke PANJANG_ANGKA - 1:
-        Jika INPUT_ANGKA[i] == ANGKA_TARGET[i]:
-            Tambahkan "Green" ke hasil
-            status_target[i] = True
-        Lain:
-            Tambahkan "" ke hasil
-
-    # Loop kedua: Periksa Yellow
-    Untuk setiap index i dari 0 ke PANJANG_ANGKA - 1:
-        Jika hasil[i] == "":
-            Untuk setiap index j dari 0 ke PANJANG_ANGKA - 1:
-                Jika INPUT_ANGKA[i] == ANGKA_TARGET[j] dan status_target[j] == False:
-                    Tambahkan "Yellow" ke hasil[i]
-                    status_target[j] = True
-                    Hentikan loop
-            Jika tidak ditemukan, set hasil[i] = "Grey"
-    Kembalikan hasil
-==============================================================================================
-Fungsi validasi_input(INPUT_ANGKA, PANJANG_ANGKA):
-    Jika panjang(INPUT_ANGKA) != PANJANG_ANGKA:
-        Kembalikan "Error: Panjang angka tidak sesuai."
-    Jika INPUT_ANGKA mengandung karakter non-digit:
-        Kembalikan "Error: Input hanya boleh berupa digit (0-9)."
-    Kembalikan "Valid"
-==============================================================================================
-Fungsi reset_game():
-    ANGKA_TARGET = generate_target(PANJANG_ANGKA)
-    jumlah_tebakan = 0
-    Kosongkan semua feedback yang ditampilkan
-    Aktifkan tombol submit
-    Tampilkan pesan status game kosong
-==============================================================================================

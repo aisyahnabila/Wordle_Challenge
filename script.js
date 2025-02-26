@@ -2,7 +2,7 @@
 (function () {
     let target = Array.from({ length: 6 }, () => Math.floor(Math.random() * 10)).join('');
     let attempts = 0;
-    const maxAttempts = 6;
+    const maxAttempts = 9; //jumlah tebakan yang bisa dimasukkan
 
     // Submit Button Event
     document.getElementById('submit-btn').addEventListener('click', () => {
@@ -84,6 +84,9 @@
             <div class="feedback-row" id="row-4"></div>
             <div class="feedback-row" id="row-5"></div>
             <div class="feedback-row" id="row-6"></div>
+            <div class="feedback-row" id="row-7"></div>
+            <div class="feedback-row" id="row-8"></div>
+            <div class="feedback-row" id="row-9"></div>
         `;
     }
 
